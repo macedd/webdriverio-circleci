@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+      - image: node:6
+      - image: selenium/hub
+      - image: selenium/node-firefox
+      - image: selenium/node-chrome
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "package.json" }}
+      - run:
+          command: npm install
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - "node_modules"
+
+      - run:
+          command: npm run start
+          background: true
+
+      - run:
+          command: npm run test
