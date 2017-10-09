@@ -13,7 +13,7 @@ describe('App Index', function() {
 
     it('should have title', function() {
         var title = browser.getTitle();
-        assert.equal(title, 'WebdriverIO at CircleCI!');
+        assert.equal(title, 'WebdriverIO at CircleCI');
     });
   });
 });
