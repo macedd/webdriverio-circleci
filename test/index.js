@@ -10,5 +10,10 @@ describe('App Index', function() {
         var content = $('p*=Hello').getText();
         assert.equal(content, 'Hello world!');
     });
+
+    it('should have title', function() {
+        var title = browser.getTitle();
+        assert.equal(title, 'WebdriverIO at CircleCI');
+    });
   });
 });
