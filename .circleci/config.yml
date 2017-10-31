@@ -33,3 +33,7 @@ jobs:
         
       # run tests!
       - run: npm run test
+
+      - store_artifacts:
+          path: ./errorShots/
+          when: always
