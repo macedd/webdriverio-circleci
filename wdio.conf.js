@@ -1,5 +1,5 @@
 exports.config = {
-    host: 'hub',
+    hostname: 'hub',
     port: 4444,
     
     //
